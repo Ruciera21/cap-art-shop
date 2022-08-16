@@ -1,38 +1,273 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,500&display=swap');
+
+a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var{
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-family: inherit;
+font-size: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+    text-decoration: none;
+    color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+nav{
+/* background:#ffffff00; */
+/* position: sticky; */
+top: 0;
+left: 0;
+z-index: 1;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 1.5rem;
+/* box-shadow: 2px  3px 2px #0a0a0a; */
+font-family: 'Poppins', sans-serif;
+font-weight: 900;
+border-bottom: 3px solid black;
+/* box-shadow: 2px 3px 2px #012838; */
+}
+
+#search-bar{
+    position: relative;
+    z-index: 1;
+}
+
+ul li {
+    list-style-type: none;
   }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.4s ease-in;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-container{
+display: -webkit-box;
+display: -webkit-flex;
+display: flex;
+-webkit-box-align: center;
+-webkit-align-items: center;
+align-items: center;
+box-sizing: border-box;
+height: 0px;
+margin-bottom: 0px;
+padding: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    flex: none;
+    /* width: 82px; */
+    /* height: 32px; */
+    /* background: url("/img/login-form/cap-logo.svg") no-repeat; */
+    margin-right: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* .logo:visited{
+    color: #83d2ed;
+}
+
+.logo:hover{
+    color: #74cceb
+} */
+
+.searchbar{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;   
+    display: flex;
+    flex: auto;
+    align-items: center;
+}
+.searchbar .bar{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    max-width: 500px;
+    height: 36px;
+    border: 2px #666 solid ;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 20px 0 10px;
+    color: #666;
+    font-size: 14px;
+    background: #fff;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-item {
+    margin-left: 2rem;
   }
+
+
+/* Slideshow container */
+.slideshow-container {
+    /* display:flex; */
+    /* max-width: 1000px; */
+    /* max-height: 1000px; */
+    width: 100%;
+    position:relative;
+    margin: auto;
+    padding: 0 0 0 0;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid black;
+    overflow:clip;
+    text-align: center;
+    /* linear-gradient(white, skyblue); */
+  }
+
+  .mySlides img {
+    display:flex;
+    width: 100vh;
+    height: 100vh;
+    overflow: -moz-hidden-unscrollable;
+    overflow: hidden; 
+    position: relative; 
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover;
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center;
+    image-rendering:optimizeQuality;
+    /* border: 10px solid rgba(255, 255, 255, 0); */
+    /* border-radius: 100px; */
+  }
+  /* Hide the images by default */
+  .mySlides {
+    display:block;
+    overflow:hidden;
+  }
+
+  .slideshow-container .slide-button {
+    top: 40%;
+    left:10%;
+    position:absolute;
+    background-color: #ffffff93;
+    border-radius: 100px;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  .slideshow-container .slide-button:hover{
+    background-color: #fff;
+  }
+  /* Next & previous buttons */
+  /* .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  } */
+  
+  /* Position the "next button" to the right */
+  /* .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  } */
+  
+  /* On hover, add a black background color with a little bit see-through */
+  /* .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  } */
+  
+  /* Caption text */
+  .text {
+    /* color: #000000; */
+    font-size: 22px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 18px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+  ._footer-container {
+    height: 30px;
+    background-color: #464a4d;
+    width: 100%;
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    color: hsla(0,0%,100%,.5);
+    z-index: 997;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+}
+
+._footer-content {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 0.3em;
+    text-align:center;
+    font-family: 'Bebas Neue', cursive;
+    color: white;    
 }

@@ -1,0 +1,285 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap');
+
+.html{
+    line-height: 1.15;
+}
+* 
+{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Perlu buat media quaries -- harus responsive */
+
+
+body {
+    /* box-sizing:content-box; */
+    position: fixed;
+    inset:0px;
+    box-sizing:content-box;
+    /* height: 100vh;
+    width: 100vh; */
+}
+
+#body-wrapper{
+    display: flex;
+}
+
+ .img-container{
+    position: absolute;
+    inset: 0px; 
+    /* height: 100%;    */
+}
+
+.bg-img{
+    background: url("/src/assets/img/2.jpg");
+    position: relative;
+    width: auto;
+    height: 100vh;
+    background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 0; 
+    transition-property: opacity;
+    transition-timing-function: ease;
+    opacity: 1;
+
+    /* border: 1px solid white; */
+}
+
+.bg-img::after{
+    position: absolute;
+    content: "";
+    top:0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    background: rgba(255,255,255,0.174);
+}
+
+.img{border-style: none;}
+
+.container{
+    position: relative;
+    margin: 0px auto;
+    padding-top: 20vh;
+    padding-bottom: 136px;
+    width: 392px;
+}
+.content{
+    padding: 0px 40px 40px;
+    border-radius: 24px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    text-align: center;
+    box-sizing: border-box;
+    transform: translate(-500,-500);
+    background: rgba(255,255,255,0.133);
+
+    border: 1px solid #fff;
+    backdrop-filter: blur(1px);
+    box-shadow: 0 0 6px 0 rgba(29,29,29,0.203);
+}
+
+.content header{
+    padding: 0.5em 0 0 0 ;
+    color:black;
+    font-size:16.2px;
+    margin: 0 0 35px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.field{
+    position: relative;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    background: rgba(255,255,255,0.94);
+    border: 1px auto rgba(255,255,255,0.94);
+    border-radius: 100px;
+}
+
+.field span{
+    color: #222;
+    width: 40px;
+    line-height: 45px;
+}
+
+.field input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color:#222;
+    font-size: 16px;
+    font-weight: 1000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.space {
+    margin-top: 16px;
+}
+
+.show{
+    position:absolute;
+    /* display: flex; */
+    right:13px;
+    /* top: 7px; */
+    /* bottom: 7px; */
+    text-align: center;
+    font-size:11px;
+    font-weight: 700;
+    color:white;
+    display:none;
+    cursor:pointer;
+    font-family: "montserrat", sans-serif;
+
+    /* padding: 0 0 0 0; */
+    /* margin: 5px 0px 5px 0px; */
+    /* background-color: rgb(56, 73, 228);
+    border: 1px solid rgb(56, 73, 228);
+    border-radius: 10px; */
+}
+
+.pass-key:valid ~ .show{
+    display:block;
+}
+
+.forget-pass{
+    text-align: center;
+    margin: 10px 0;
+}
+.forget-pass a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+.forget-pass:hover a{
+    text-decoration: underline;
+}
+
+.field-buttons{
+    display: flex;
+    
+}
+.manual-login{
+    color : black;
+    margin: 10px 0;
+    /* font-family: 'Poppins', sans-serif; */
+}
+.register{
+    color : black;
+    margin: 10px 0;
+}
+
+.manual{
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-basis: 50%;
+    font-family: 'Montserrat', sans-serif;
+    /* font-weight: 700; */
+}
+
+.login{
+    position:static;
+    margin: 10px 1em 0 0;
+    color:#090909;
+    padding: 0.5em 0em 0em 2.7em;
+    font-size: 18px;
+    border-radius: 5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 500
+    /* box-shadow: 6px 6px 12px #c5c5c5, -6px 6px 12px #fff; */
+}
+
+ .login:hover{ 
+    background: #838383;
+    border: 1px solid #838383;
+    /* box-shadow: -6px 6px 24px #c5c5c5, 6px 6px 12px #fff */
+} 
+
+.register{
+    margin: 10px 0 0 0;
+    color:#ffffff;
+    padding: 0.5em 0em 0em 2.1em;
+    font-size: 18px;
+    border-radius: 5em;
+    background: #0a2ab9;
+    border: 1px solid #0a2ab9;
+    transition: all .3s;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 500;
+    /* box-shadow: 6px 6px 12px #c5c5c5, -6px 6px 12px #fff; */
+}
+
+ .register:hover{
+    background: #011777;
+    border: 1px solid #011777;
+    /* box-shadow: -6px 6px 12px #c5c5c5, 6px 6px 12px #fff  */
+ }
+
+._footer-container {
+    height: 30px;
+    background-color: #464a4d;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: hsla(0,0%,100%,.5);
+    z-index: 997;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+._footer-content {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 0.3em;
+    text-align:center;
+    font-family: 'Bebas Neue', cursive;
+    color: white;    
+}
+
+
+/* .other-login-wrapper {
+    width: -moz-available;
+    display: inline-grid;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    color: rgb(71, 71, 71);
+    background-color: rgba(0, 0, 0, 0.04);
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: bold;
+    padding-right: 24px;
+    padding-left: 24px;
+    border-radius: 999999px;
+    transition: color 0.2s ease 0s, background-color 0.2s ease 0s, box-shadow 0.2s ease 0s;
+    height: 40px;
+  }
+.other-btn{
+    position: relative;
+    color: rgb(71, 71, 71);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: color 0.2s ease 0s, background-color 0.2s ease 0s;
+} */

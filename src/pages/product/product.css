@@ -1,0 +1,55 @@
+.products {
+    align-items: center;
+    margin: 0 auto 2rem;
+    max-width: 1200px;
+    font-family: "Bebas Neue", cursive;
+    text-align: center;
+  }
+
+  .products h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem;
+    letter-spacing: 10px;
+  }
+
+  .product-items {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card, .product-items {
+    justify-content: center;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+    margin: 1rem;
+    padding: 1.5rem;
+    width: 350px;
+  }
+  
+  .card img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .product-img {
+    border-radius: 5px;}
+  
+  .product-item p {
+   font-size: 1rem;
+  }
+
+  .product-item h4{
+    font-family:'Poppins', sans-serif
+  }
