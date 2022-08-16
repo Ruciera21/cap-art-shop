@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout children={<Home />} />} />
-          <Route path="/login" element={<Layout children={<Login />} />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Layout children={<Products />} />} />
         </Routes>
       </BrowserRouter>

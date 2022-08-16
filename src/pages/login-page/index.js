@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../login-page/login-page.css";
+import "./login-page.css";
 import Logo from "../../assets/login-form/cap-logo.svg";
+import Footer from "../../components/layout/footer";
 
 //
 
@@ -48,7 +49,7 @@ const Login = () => {
                   required
                   placeholder="Password"
                 />
-                <span className="show">SHOW</span>
+                {/* <span className="show">SHOW</span> */}
               </div>
               <div className="field-buttons">
                 <button
@@ -84,13 +85,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <footer id="footer">
-        <div className="_footer-container">
-          <div className="_footer-content">
-            &copy;CAP - 2022. All Rights Reserved
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </body>
   );
 };

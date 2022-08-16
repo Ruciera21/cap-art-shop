@@ -10,57 +10,57 @@ const Products = () => {
         <h1>Shop</h1>
         <div className="product-items">
           <CardProduct
-            image={images["1.jpg"]}
-            title="Brazil Dark Ground"
+            image={images["geki.jpg"]}
+            title="Geki-dan"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["2.jpg"]}
-            title="Breakfast Medium Roast"
+            image={images["pokazo.jpeg"]}
+            title="Mika Pikazo"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["3.webp"]}
-            title="Costarica Light Roast"
+            image={images["makima.jfif"]}
+            title="Makima"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["4.jpg"]}
-            title="Decaf Espresso"
+            image={images["gbf.png"]}
+            title="Granblue"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["5.jpg"]}
-            title="Espresso Roast Blend"
+            image={images["yoneya.jpeg"]}
+            title="Yoneyama Mai"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["6.jpg"]}
-            title="French Roast"
+            image={images["soo3.jpg"]}
+            title="Scenery-I"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["7.jpg"]}
-            title="Hazelnut Coffe"
+            image={images["soo4.jpeg"]}
+            title="Scenery-II"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["8.jpg"]}
-            title="Jamaica Blue"
+            image={images["soo2.jpg"]}
+            title="Scenery-III"
             price="$19.99"
           />
 
           <CardProduct
-            image={images["9.jpg"]}
-            title="Organic Mexico"
-            price="$29.99"
+            image={images["soo1.png"]}
+            title="Scenery-IV"
+            price="$19.99"
           />
         </div>
       </div>
