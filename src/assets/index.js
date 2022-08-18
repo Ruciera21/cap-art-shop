@@ -8,11 +8,12 @@ function importAll(r) {
 }
 
 const imgs = importAll(
-  require.context("./product", false, /\.(png|jpe?g|jpg|svg|webp|jfif)$/)
+  require.context("./img", false, /\.(png|jpe?g|jpg|svg|webp|jfif)$/)
 );
 
 const images = importAll(
   require.context("./product", false, /\.(png|jpe?g|jpg|svg|webp|jfif)$/)
 );
+
 export { imgs };
 export { images };
