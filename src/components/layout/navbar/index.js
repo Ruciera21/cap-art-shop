@@ -2,6 +2,10 @@ import React from "react";
 import LOGO from "../../../assets/login-form/cap-logo.svg";
 import { Link } from "react-router-dom";
 
+import { auth, db, logout } from "config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { query, collection, getDocs, where } from "firebase/firestore";
+
 const Navbar = () => {
   return (
     <>
@@ -23,19 +27,24 @@ const Navbar = () => {
             </div>
           </div>
           <ul>
-            <li className="nav-item">
+            <li className="nav-item gallery">
               <Link to="/" className="navbar-link" id="nav-link">
                 Gallery
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item shop">
               <Link to="/shop" className="navbar-link" id="nav-link">
                 Shop
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/login" className="navbar-link" id="nav-link">
-                Login
+                Sign in
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="navbar-link" id="nav-link">
+                Sign up
               </Link>
             </li>
           </ul>

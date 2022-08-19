@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./login-page.css";
 import Logo from "../../assets/login-form/cap-logo.svg";
 import { auth, logInWithEmailAndPassword } from "../../config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 //
 
 const Login = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -15,6 +19,15 @@ const Login = () => {
   const handleLogin = async () => {
     await logInWithEmailAndPassword(login.email, login.password);
   };
+
+  useEffect(() => {
+    if (loading) {
+      return;
+    }
+    if (user) navigate("/");
+    if (error) alert(error);
+  }, [loading, user, error, navigate]);
+
   return (
     <body className="login-landing-page">
       <div id="body-wrapper">
@@ -74,19 +87,12 @@ const Login = () => {
               </div>
               <div className="field-buttons">
                 <button
-                  className="field manual login"
+                  className="field login"
                   type="submit"
                   height="40"
                   onClick={handleLogin}
                 >
                   Login
-                </button>
-                <button
-                  className="field manual register"
-                  type="submit"
-                  height="40"
-                >
-                  Register
                 </button>
               </div>
             </form>

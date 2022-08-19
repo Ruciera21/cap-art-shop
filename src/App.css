@@ -12,6 +12,7 @@ font-family: inherit;
 font-size: 100%;
 }
 
+
 a{
     text-decoration: none;
     color: black;
@@ -63,6 +64,7 @@ margin-bottom: 0px;
 padding: 16px;
 }
 
+
 .logo {
     -webkit-box-flex: 0;
     -webkit-flex: none;
@@ -102,6 +104,25 @@ padding: 16px;
     color: #666;
     font-size: 14px;
     background: #fff;
+}
+
+@media only screen and (max-width: 600px){
+  .searchbar{
+    display: none;
+  }
+  .gallery,.shop{
+    display: none;
+  }
+ .nav-item{
+  font-size: auto;
+  min-width: auto;
+ } 
+}
+
+@media only screen and (max-width: 420px){
+  .nav-item{
+    font-size: 15px;
+   }
 }
 
 ul {

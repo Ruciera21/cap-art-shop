@@ -1,11 +1,11 @@
 import React from "react";
-import Gallery from "../gallery";
+import HeroSlider from "../../components/hero";
 import Products from "../../pages/product";
 
 const Home = () => {
   return (
     <>
-      <Gallery />
+      <HeroSlider />
       <Products />
     </>
   );
