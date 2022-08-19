@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 // import { imgs } from "../../assets";
 import "./hero.css";
-import AutoSlide from "../../components/hero/autoSlide";
+// import AutoSlide from "../../components/hero/autoSlide";
 import Logo from "../../assets/img/7.jpg";
 import Logo1 from "../../assets/img/3.webp";
 import Logo2 from "../../assets/img/4.jpg";
@@ -38,7 +38,7 @@ const Gallery = () => {
           <div className="mySlides fade">
             <img src={Logo6} alt="" style={{ width: "100%" }} />
           </div>
-          <AutoSlide />
+          {/* <AutoSlide /> */}
         </div>
         <Link to="#" className="slide-button">
           Gallery

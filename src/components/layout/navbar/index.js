@@ -1,3 +1,4 @@
+import React from "react";
 import LOGO from "../../../assets/login-form/cap-logo.svg";
 import { Link } from "react-router-dom";
 
