@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login-page.css";
 import Logo from "../../assets/login-form/cap-logo.svg";
+import backGr from "../../assets/img/2.jpg";
 import { auth, logInWithEmailAndPassword } from "../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import styled from "styled-components";
 
 //
 
@@ -33,8 +35,9 @@ const Login = () => {
       <div id="body-wrapper">
         {/* <!-- Background container --> */}
         <div className="img-container">
-          <div className="backgr">
-            <div className="bg-img"></div>
+          {/* <div className="backgr"> */}
+          <div className="bg-img">
+            <img src={backGr} style={{ width: "100%" }}></img>
           </div>
         </div>
 

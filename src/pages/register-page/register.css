@@ -1,25 +1,29 @@
 
-.register{
-    margin: 10px 0 0 0;
-    padding: 0.5em 0em 0em 2.1em;
-    font-size: 18px;
-    border-radius: 5em;
-    background: #b9c6ff;
-    border: 1px solid #b9c6ff;
-    transition: all .3s;
-    font-family: 'Public Sans', sans-serif;
-    font-weight: 500;
-    /* box-shadow: 6px 6px 12px #c5c5c5, -6px 6px 12px #fff; */
-    color: aliceblue;
+.btn-register{
+   position: relative;
+   display: flex;
+   text-align: center;
+   flex-basis: 50%;
+   position:static;
+   margin: 10px 1em 0 0;
+   color:#090909;
+   padding: 0.5em 0em 0.5em 2.7em;
+   font-size: 18px;
+   border-radius: 5em;
+   background: #e8e8e8;
+   border: 1px solid #e8e8e8;
+   transition: all .3s;
+   font-family: 'Public Sans', sans-serif;
+   font-weight: 500;
 }
 
- .register:hover{
+ .btn-register:hover{
     background: #011777;
     border: 1px solid #011777;
     color: white;
     /* box-shadow: -6px 6px 12px #c5c5c5, 6px 6px 12px #fff  */
  }
 
- .register a:hover{
+ .btn-register a:hover{
     color: white;
  }

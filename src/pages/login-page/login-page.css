@@ -38,7 +38,6 @@
 }
 
 .bg-img{
-    background: url("/src/assets/img/2.jpg");
     position: relative;
     width: auto;
     height: 100vh;
@@ -46,11 +45,9 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: 50% 0; 
-    transition-property: opacity;
-    transition-timing-function: ease;
+    /* transition-property: opacity;
+    transition-timing-function: ease; */
     opacity: 1;
-
-    /* border: 1px solid white; */
 }
 
 .bg-img::after{
@@ -120,6 +117,7 @@
     border: none;
     outline: none;
     color:#222;
+    padding: 0 0 0 0.5em;
     font-size: 16px;
     font-weight: 1000;
     font-family: 'Poppins', sans-serif;

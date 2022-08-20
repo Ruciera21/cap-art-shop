@@ -2,9 +2,9 @@ import React from "react";
 import LOGO from "../../../assets/login-form/cap-logo.svg";
 import { Link } from "react-router-dom";
 
-import { auth, db, logout } from "config/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { query, collection, getDocs, where } from "firebase/firestore";
+// import { auth, db, logout } from "config/firebase";
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import { query, collection, getDocs, where } from "firebase/firestore";
 
 const Navbar = () => {
   return (
@@ -43,7 +43,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="navbar-link" id="nav-link">
+              <Link to="/register" className="navbar-link" id="nav-link">
                 Sign up
               </Link>
             </li>

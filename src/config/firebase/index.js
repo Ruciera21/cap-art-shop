@@ -51,4 +51,4 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   }
 };
 
-export { auth, logInWithEmailAndPassword };
+export { auth, logInWithEmailAndPassword, registerWithEmailAndPassword };
