@@ -37,7 +37,7 @@ const DetailProduct = () => {
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna
             </P>
-            <A href={user ? "/" : "/login"}>Add to Cart</A>
+            <A href={user ? "/cart" : "/login"}>Add to Cart</A>
           </Col2>
         </ColDetailProduct>
       </StyledDetailProduct>
