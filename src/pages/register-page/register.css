@@ -1,3 +1,6 @@
+header p{
+   font-size: 15px;
+}
 
 .btn-register{
    position: relative;
@@ -7,7 +10,7 @@
    position:static;
    margin: 10px 1em 0 0;
    color:#090909;
-   padding: 0.5em 0em 0.5em 2.7em;
+   padding: 0.5em 0em 0.5em 2.2em;
    font-size: 18px;
    border-radius: 5em;
    background: #e8e8e8;

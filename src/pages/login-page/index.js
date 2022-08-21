@@ -5,7 +5,7 @@ import Logo from "../../assets/login-form/cap-logo.svg";
 import backGr from "../../assets/img/2.jpg";
 import { auth, logInWithEmailAndPassword } from "../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 //
 
@@ -13,13 +13,14 @@ const Login = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
-  const [login, setLogin] = useState({
+  const [dataLogin, setDataLogin] = useState({
     email: "",
     password: "",
   });
 
-  const handleLogin = async () => {
-    await logInWithEmailAndPassword(login.email, login.password);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    await logInWithEmailAndPassword(dataLogin.email, dataLogin.password);
   };
 
   useEffect(() => {
@@ -37,7 +38,17 @@ const Login = () => {
         <div className="img-container">
           {/* <div className="backgr"> */}
           <div className="bg-img">
-            <img src={backGr} style={{ width: "100%" }}></img>
+            <img
+              src={backGr}
+              style={{
+                display: "block",
+                width: "100%",
+                height: "100%",
+                backgroundSize: "cover",
+                position: "absolute",
+              }}
+              alt="background"
+            ></img>
           </div>
         </div>
 
@@ -54,7 +65,9 @@ const Login = () => {
                 margin: "64px auto 0px",
               }}
             />
-            <header>CREATE - APPRECIATE - PERPETUATE</header>
+            <header>
+              <p>CREATE - APPRECIATE - PERPETUATE</p>
+            </header>
             <form action="#" id="myForm">
               <div className="field email">
                 <span class="fa fa-user"></span>
@@ -62,10 +75,10 @@ const Login = () => {
                   type="text"
                   required
                   placeholder="Enter Email"
-                  value={login.email}
+                  value={dataLogin.email}
                   onChange={(e) =>
-                    setLogin({
-                      ...login,
+                    setDataLogin({
+                      ...dataLogin,
                       email: e.target.value,
                     })
                   }
@@ -80,8 +93,8 @@ const Login = () => {
                   placeholder="Password"
                   // value={login.password}
                   onChange={(e) =>
-                    setLogin({
-                      ...login,
+                    setDataLogin({
+                      ...dataLogin,
                       password: e.target.value,
                     })
                   }

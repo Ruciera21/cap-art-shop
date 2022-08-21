@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  auth,
-  logInWithEmailAndPassword,
-  registerWithEmailAndPassword,
-} from "../../config/firebase";
+import { auth, registerWithEmailAndPassword } from "../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/login-form/cap-logo.svg";
@@ -12,29 +8,24 @@ import "./register.css";
 
 const Register = () => {
   const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
-
-  // State for the form
-  const [dataLogin, setDataLogin] = useState({ email: "", password: "" });
   const [dataRegister, setDataRegister] = useState({
     name: "",
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
+
+  // State for the form
 
   // handle the form data
-  const handleSubmit = async (e, params) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (params === "login") {
-      await logInWithEmailAndPassword(dataLogin.email, dataLogin.password);
-    } else {
-      await registerWithEmailAndPassword(
-        dataRegister.name,
-        dataRegister.email,
-        dataRegister.password
-      );
-      alert("User created successfully");
-    }
+    await registerWithEmailAndPassword(
+      dataRegister.name,
+      dataRegister.email,
+      dataRegister.password
+    );
+    alert("User created successfully");
   };
 
   useEffect(() => {
@@ -58,6 +49,7 @@ const Register = () => {
                 position: "block",
                 width: "100%",
               }}
+              alt="background"
             ></img>
           </div>
         </div>
@@ -75,7 +67,9 @@ const Register = () => {
                 margin: "64px auto 0px",
               }}
             />
-            <header>CREATE - APPRECIATE - PERPETUATE</header>
+            <header>
+              <p>CREATE - APPRECIATE - PERPETUATE</p>
+            </header>
             <form action="#" id="myForm">
               <div className="field register-username">
                 <span class="fa fa-user"></span>
@@ -138,14 +132,3 @@ const Register = () => {
 };
 
 export default Register;
-
-{
-  /* <button
-  className="field manual register"
-  type="submit"
-  height="40"
-  style={{ color: "aliceblue" }}
->
-  <Link to="/"> Register </Link>
-</button>; */
-}

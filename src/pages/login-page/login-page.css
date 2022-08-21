@@ -17,6 +17,10 @@
 /* Perlu buat media quaries -- harus responsive */
 
 
+header p{
+    font-size: 15px;
+}
+
 .login-landing-page {
     /* box-sizing:content-box; */
     position: fixed;
@@ -38,10 +42,6 @@
 }
 
 .bg-img{
-    position: relative;
-    width: auto;
-    height: 100vh;
-    background-size:cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: 50% 0; 
