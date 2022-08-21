@@ -59,6 +59,15 @@ const Navbar = () => {
                 Shop
               </Link>
             </li>
+            <li className="nav-item shop">
+              <Link
+                to="/cart"
+                className="fa fa-paint-brush navbar-link"
+                id="nav-link"
+              >
+                Cart
+              </Link>
+            </li>
             {user ? (
               <li className="nav-item">
                 <div>{user && `Hi, ${name.toLocaleUpperCase()}! `}</div>

@@ -9,11 +9,13 @@ const Products = () => {
       <div className="products">
         <h1>Shop</h1>
         <div className="product-items">
-          <CardProduct
-            image={images["geki.jpg"]}
-            title="Geki-dan"
-            price="$19.99"
-          />
+          <a href="/detailproduct">
+            <CardProduct
+              image={images["geki.jpg"]}
+              title="Geki-dan"
+              price="$19.99"
+            />
+          </a>
 
           <CardProduct
             image={images["pokazo.jpeg"]}

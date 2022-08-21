@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import "./hero.css";
 import { imgs } from "../../assets";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // req  uires a loader
 import { Carousel } from "react-responsive-carousel";
 
 const HeroSlider = () => {
@@ -24,7 +24,7 @@ const HeroSlider = () => {
             <img src={imgs["6.jpg"]} alt="" style={{ width: "100%" }} />
           </div>
           <div className="mySlides fade">
-            <img src={imgs["7.jpg"]} alt="" style={{ width: "100%" }} />
+            <img src={imgs["5.jpeg"]} alt="" style={{ width: "100%" }} />
           </div>
         </Carousel>
         <Link to="#" className="slide-button">

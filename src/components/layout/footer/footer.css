@@ -1,0 +1,23 @@
+._footer-container {
+    height: 30px;
+    background-color: #464a4d;
+    width: 100%;
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    color: hsla(0,0%,100%,.5);
+    z-index: 997;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+}
+
+._footer-content {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 0.3em;
+    text-align:center;
+    font-family: 'Bebas Neue', cursive;
+    color: white;    
+} 

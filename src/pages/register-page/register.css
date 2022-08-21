@@ -1,5 +1,5 @@
 header p{
-   font-size: 15px;
+   font-size: 15px   ;
 }
 
 .btn-register{
@@ -24,7 +24,7 @@ header p{
     background: #011777;
     border: 1px solid #011777;
     color: white;
-    /* box-shadow: -6px 6px 12px #c5c5c5, 6px 6px 12px #fff  */
+    box-shadow: -6px 6px 12px #c5c5c5, 6px 6px 12px #fff 
  }
 
  .btn-register a:hover{
