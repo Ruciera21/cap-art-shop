@@ -17,6 +17,7 @@ export const H1 = styled.h1`
   font-weight: 700;
   line-height: 24x;
   color: #0c0d36;
+  font-family: "Poppins", sans-serif;
 
   @media (max-width: 575px) {
     text-align: center;
@@ -44,10 +45,12 @@ export const Pccp = styled.p`
   font-weight: 400;
   line-height: 27x;
   margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 
   @media (max-width: 768px) {
     font-size: 14px;
     margin-top: -8px;
+    font-family: "Poppins", sans-serif;
   }
 `;
 
@@ -56,6 +59,7 @@ export const H4 = styled.h4`
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const StyledImg = styled.img`

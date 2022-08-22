@@ -11,23 +11,23 @@ const Navbar = () => {
   const [user] = useAuthState(auth);
   // const location = useLocation();
 
-  const fetchUserName = useCallback(async () => {
-    try {
-      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
-      const doc = await getDocs(q);
-      const data = doc.docs[0].data();
-      setName(data.name);
-    } catch (err) {
-      console.error(err);
-      alert("An error occured while fetching user data");
-    }
-  }, [user]);
+  // const fetchUserName = useCallback(async () => {
+  //   try {
+  //     const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+  //     const doc = await getDocs(q);
+  //     const data = doc.docs[0].data();
+  //     setName(data.name);
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert("An error occured while fetching user data");
+  //   }
+  // }, [user]);
 
-  useEffect(() => {
-    if (user) {
-      fetchUserName();
-    }
-  }, [user, fetchUserName]);
+  // useEffect(() => {
+  //   if (user) {
+  //     fetchUserName();
+  //   }
+  // }, [user, fetchUserName]);
 
   return (
     <>
@@ -59,18 +59,15 @@ const Navbar = () => {
                 Shop
               </Link>
             </li>
-            <li className="nav-item shop">
-              <Link
-                to="/cart"
-                className="fa fa-paint-brush navbar-link"
-                id="nav-link"
-              >
-                Cart
-              </Link>
-            </li>
             {user ? (
-              <li className="nav-item">
-                <div>{user && `Hi, ${name.toLocaleUpperCase()}! `}</div>
+              <li className="nav-item shop">
+                <Link
+                  to="/cart"
+                  className="fa fa-paint-brush navbar-link"
+                  id="nav-link"
+                >
+                  Cart
+                </Link>
               </li>
             ) : (
               <li className="nav-item">

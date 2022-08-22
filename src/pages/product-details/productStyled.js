@@ -55,13 +55,15 @@ export const Col2 = styled.div`
 `;
 
 export const H1 = styled.h1`
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 150%;
   color: #0c0d36;
+  font-family: "Poppins", sans-serif;
 
   @media screen and (max-width: 768px) {
     font-size: 1.25rem;
+    font-family: "Poppins", sans-serif;
   }
 `;
 
@@ -71,9 +73,11 @@ export const PQuote = styled.p`
   font-size: 12px;
   line-height: 180%;
   color: #979797;
+  font-family: "Poppins", sans-serif;
 
   @media screen and (max-width: 768px) {
     font-size: 0.625rem;
+    font-family: "Poppins", sans-serif;
   }
 `;
 
@@ -90,13 +94,15 @@ export const H4 = styled.h4`
 
 export const P = styled.p`
   text-align: justify;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 180%;
   color: #525252;
+  font-family: "Poppins", sans-serif;
 
   @media screen and (max-width: 768px) {
     font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
   }
 `;
 
