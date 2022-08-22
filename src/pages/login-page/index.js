@@ -41,11 +41,8 @@ const Login = () => {
             <img
               src={backGr}
               style={{
-                display: "block",
+                position: "block",
                 width: "100%",
-                height: "100%",
-                backgroundSize: "cover",
-                position: "absolute",
               }}
               alt="background"
             ></img>
@@ -55,16 +52,18 @@ const Login = () => {
         {/* <!-- Login container  --> */}
         <div className="container">
           <div className="content">
-            <img
-              src={Logo}
-              type="catchphrase"
-              alt="banner"
-              style={{
-                display: "block",
-                height: "64px",
-                margin: "64px auto 0px",
-              }}
-            />
+            <Link to="/">
+              <img
+                src={Logo}
+                type="catchphrase"
+                alt="banner"
+                style={{
+                  display: "block",
+                  height: "64px",
+                  margin: "20px auto 0px",
+                }}
+              />
+            </Link>
             <header>
               <p>CREATE - APPRECIATE - PERPETUATE</p>
             </header>
@@ -113,10 +112,9 @@ const Login = () => {
               </div>
             </form>{" "}
             <div className="register">
-              <p>Have no account yet? </p>
-              <Link to="/register" className="registerbtn">
-                Click here
-              </Link>
+              <p>
+                Have no account yet? <Link to="/register"> Click here</Link>
+              </p>
             </div>
             <div className="forget-pass">
               <Link to="#"> Forgot password? </Link>

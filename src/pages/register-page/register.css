@@ -30,3 +30,7 @@ header p{
  .btn-register a:hover{
     color: white;
  }
+
+ .loginlanding p{
+   font-family: 'Poppins', sans-serif 
+ }

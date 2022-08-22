@@ -57,16 +57,18 @@ const Register = () => {
         {/* <!-- Login container  --> */}
         <div className="container">
           <div className="content">
-            <img
-              src={Logo}
-              type="catchphrase"
-              alt="banner"
-              style={{
-                display: "block",
-                height: "64px",
-                margin: "64px auto 0px",
-              }}
-            />
+            <Link to="/">
+              <img
+                src={Logo}
+                type="catchphrase"
+                alt="banner"
+                style={{
+                  display: "block",
+                  height: "64px",
+                  margin: "20px auto 0px",
+                }}
+              />
+            </Link>
             <header>
               <p>CREATE - APPRECIATE - PERPETUATE</p>
             </header>
@@ -119,10 +121,12 @@ const Register = () => {
             </form>
             <div className="loginlanding">
               <p>
-                Already have an account?{"   "}
-                <Link to="/login" className="loginbtn">
-                  Click here
-                </Link>
+                Already have an account?{" "}
+                <p>
+                  <Link to="/login" className="loginbtn">
+                    Click here
+                  </Link>
+                </p>
               </p>
             </div>
           </div>
