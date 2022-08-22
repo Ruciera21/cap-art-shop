@@ -5,6 +5,8 @@ import { auth, db, logout } from "../../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import React, { useCallback, useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const [name, setName] = useState("");
@@ -28,6 +30,33 @@ const Navbar = () => {
   //     fetchUserName();
   //   }
   // }, [user, fetchUserName]);
+
+  const notify = () => {
+    toast(customMsg, {
+      position: "top-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+  const customMsg = ({ closeToast }) => (
+    <div className="customMsg">
+      <h2>Logout</h2>
+      <p> Are you sure?</p>
+      <div className="choices-container">
+        <div className="okMsg">
+          <button onClick={logout}>Sure</button>
+        </div>
+        <div className="cancelMsg">
+          <button onClick={closeToast}>Cancel</button>{" "}
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -78,7 +107,11 @@ const Navbar = () => {
             )}
             {user ? (
               <li className="nav-item">
-                <div onClick={logout}> Log out </div>
+                <button className="logout-btn" onClick={notify}>
+                  {" "}
+                  Log out{" "}
+                </button>
+                  <ToastContainer />
               </li>
             ) : (
               <li className="nav-item">

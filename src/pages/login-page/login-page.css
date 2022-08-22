@@ -235,6 +235,11 @@ header p{
     color: white;    
 }
 
+.logout-btn:hover{
+    color: red;
+}
+
+
 
 /* .other-login-wrapper {
     width: -moz-available;
