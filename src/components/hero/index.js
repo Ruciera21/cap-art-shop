@@ -12,20 +12,20 @@ const HeroSlider = () => {
         <Carousel
           showThumbs={false}
           autoPlay={true}
-          interval={2000}
+          interval={10000}
           infiniteLoop={true}
           animationHandler={"fade"}
           swipeable={false}
         >
-          <div className="mySlides fade">
-            <img src={imgs["4.jpg"]} alt="" style={{ width: "100%" }} />
-          </div>
-          <div className="mySlides fade">
-            <img src={imgs["6.jpg"]} alt="" style={{ width: "100%" }} />
-          </div>
-          <div className="mySlides fade">
-            <img src={imgs["5.jpeg"]} alt="" style={{ width: "100%" }} />
-          </div>
+          {/* <div className="mySlides fade"> */}
+          <img src={imgs["5.jpeg"]} alt="" style={{}} />
+          {/* </div> */}
+          {/* <div className="mySlides fade"> */}
+          <img src={imgs["10.jpg"]} alt="" />
+          {/* </div> */}
+          {/* <div className="mySlides fade"> */}
+          <img src={imgs["7.jpg"]} alt="" />
+          {/* </div> */}
         </Carousel>
         <Link to="#" className="slide-button">
           Gallery
