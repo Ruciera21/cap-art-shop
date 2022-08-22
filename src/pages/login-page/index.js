@@ -111,7 +111,13 @@ const Login = () => {
                   Login
                 </button>
               </div>
-            </form>
+            </form>{" "}
+            <div className="register">
+              <p>Have no account yet? </p>
+              <Link to="/register" className="registerbtn">
+                Click here
+              </Link>
+            </div>
             <div className="forget-pass">
               <Link to="#"> Forgot password? </Link>
             </div>

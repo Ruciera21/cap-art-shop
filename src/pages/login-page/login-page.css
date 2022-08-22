@@ -199,6 +199,19 @@ header p{
     /* box-shadow: -6px 6px 24px #c5c5c5, 6px 6px 12px #fff */
 } 
 
+.register p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.registerbtn{
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgb(197, 197, 255);
+    border-radius: 100px;
+    background-color: rgb(197, 197, 255);
+    padding: 2px;
+    border:10px
+}
+
 ._footer-container-login {
     height: 30px;
     background-color: #464a4d;

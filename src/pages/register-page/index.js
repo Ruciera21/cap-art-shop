@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { auth, registerWithEmailAndPassword } from "../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/login-form/cap-logo.svg";
 import backGr from "../../assets/img/2.jpg";
 import "./register.css";
@@ -117,6 +117,14 @@ const Register = () => {
                 </button>
               </div>
             </form>
+            <div className="loginlanding">
+              <p>
+                Already have an account?{"   "}
+                <Link to="/login" className="loginbtn">
+                  Click here
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>
