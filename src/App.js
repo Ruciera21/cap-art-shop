@@ -4,9 +4,10 @@ import "./App.css";
 import Login from "./pages/login-page";
 import Home from "./pages/home";
 import Layout from "./components/layout";
-import Products from "./pages/product";
+import Index from "./pages/product";
 import Register from "./pages/register-page";
 import DetailProduct from "./pages/product-details";
+import ProductDetails from "./pages/productdetails";
 import Cart from "./pages/cart";
 
 function App() {
@@ -21,8 +22,12 @@ function App() {
             path="/detailproduct"
             element={<Layout children={<DetailProduct />} />}
           />
+          <Route
+            path="/product/:productId"
+            element={<Layout children={<ProductDetails />} />}
+          />
           <Route exact path="/cart" element={<Cart />} />
-          <Route path="/shop" element={<Layout children={<Products />} />} />
+          <Route path="/shop" element={<Layout children={<Index />} />} />
         </Routes>
       </BrowserRouter>
     </>
