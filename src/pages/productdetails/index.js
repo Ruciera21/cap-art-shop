@@ -15,11 +15,12 @@ import {
   P,
 } from "./productStyled";
 
-import { Auth } from "../../config/firebase";
+import { auth } from "../../config/firebase";
 import { useProducts, useDetailProducts } from "../../hooks/useProduct";
 
 const Index = () => {
   const { productId } = useParams();
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const [changeProduct, setChangeProduct] = useState(false);
   const [isLoading, dataDetail, getDetailProduct] = useDetailProducts();
@@ -88,6 +89,7 @@ const Index = () => {
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna
             </P>
+            <A href={user ? "/cart" : "/login"}>Add to Cart</A>
           </Col2>
         </ColDetailProduct>
       </StyledDetailProduct>
