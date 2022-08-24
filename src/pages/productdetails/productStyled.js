@@ -46,7 +46,7 @@ export const StyledImg = styled.img`
 `;
 export const Col2 = styled.div`
   width: 100%;
-  padding: 100px;
+  padding: 13vh;
   margin-top: -4%;
 
   @media (max-width: 575px) {

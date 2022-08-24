@@ -30,22 +30,37 @@ const Index = () => {
     quantity: 0,
   });
 
-  useEffect(() => {
-    if (dataDetail.length < 1 || changeProduct) {
-      getDetailProduct(productId);
-      getProduct(Math.floor(Math.random() * 2 + 1), 4);
-      setChangeProduct(false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [changeProduct]);
+  const getDetail = () => {
+    getDetailProduct(productId);
+  };
+  console.log(dataDetail);
+  // null == false
+  // 0 == false
+  // undefined == false
 
-  const handleClick = useCallback(
-    (id) => {
-      setChangeProduct(true);
-      navigate(`/product/${id}`);
-    },
-    [navigate]
-  );
+  // array([]) = ini masih dianggap true
+  // .length itu untuk ngitung jumlah array
+
+  useEffect(() => {
+    getDetail();
+  }, [productId]);
+
+  // useEffect(() => {
+  //   if (dataDetail.length > 1 || changeProduct) {
+  //     getDetailProduct(productId);
+  //     getProduct(Math.floor(Math.random() * 2 + 1), 4);
+  //     setChangeProduct(false);
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [changeProduct]);
+
+  // const handleClick = useCallback(
+  //   (id) => {
+  //     setChangeProduct(true);
+  //     navigate(`/product/${id}`);
+  //   },
+  //   [navigate]
+  // );
 
   return isLoading && isLoadingProduct ? (
     <div style={{ height: "100vh", textAlign: "center" }}>
@@ -71,7 +86,7 @@ const Index = () => {
           </Col1>
           <Col2>
             <H1>{dataDetail?.productname}</H1>
-            <PQuote>Geki Geki</PQuote>
+            {/* <PQuote>Geki Geki</PQuote> */}
             <input
               type="number"
               min="0"
@@ -84,11 +99,8 @@ const Index = () => {
               <i className="fa fa-indent"></i> Price
             </H4>
 
-            <H1>{dataDetail?.price}</H1>
-            <P>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </P>
+            <H1>${dataDetail?.price}</H1>
+            <P>{dataDetail?.description}</P>
             <A href={user ? "/cart" : "/login"}>Add to Cart</A>
           </Col2>
         </ColDetailProduct>
