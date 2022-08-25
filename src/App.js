@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/login-page";
@@ -14,21 +14,23 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout children={<Home />} />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route
-            path="/detailproduct"
-            element={<Layout children={<DetailProduct />} />}
-          />
-          <Route
-            path="/product/:productId"
-            element={<Layout children={<ProductDetails />} />}
-          />
-          <Route exact path="/cart" element={<Cart />} />
-          <Route path="/shop" element={<Layout children={<Index />} />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Layout children={<Home />} />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/detailproduct"
+              element={<Layout children={<DetailProduct />} />}
+            />
+            <Route
+              path="/product/:productId"
+              element={<Layout children={<ProductDetails />} />}
+            />
+            <Route exact path="/cart" element={<Cart />} />
+            <Route path="/shop" element={<Layout children={<Index />} />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </>
   );

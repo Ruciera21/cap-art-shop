@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../api";
+import swal from "sweetalert";
 
 export const useProducts = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +12,7 @@ export const useProducts = () => {
       const res = await api.getAll(page, limit, sortBy, order);
       setData(res.data);
     } catch (err) {
-      console.log(err);
+      swal("error", err, "error");
     } finally {
       setIsLoading(false);
     }
@@ -30,7 +31,7 @@ export const useDetailProducts = () => {
       const res = await api.getById(id);
       setData(res.data);
     } catch (err) {
-      console.log(err);
+      swal("error", err, "error");
     } finally {
       setIsLoading(false);
     }

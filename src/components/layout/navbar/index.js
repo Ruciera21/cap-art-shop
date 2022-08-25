@@ -1,5 +1,6 @@
 import LOGO from "../../../assets/login-form/cap-logo.svg";
 import { Link } from "react-router-dom";
+import api from "../../../api";
 
 import { auth, db, logout } from "../../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -11,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Navbar = () => {
   const [name, setName] = useState("");
   const [user] = useAuthState(auth);
+  const [query, setQuery] = useState("");
   // const location = useLocation();
 
   // const fetchUserName = useCallback(async () => {
@@ -58,25 +60,62 @@ const Navbar = () => {
     </div>
   );
 
+  const seer = () => {
+    api
+      .filter((post) => {
+        if (query === "") {
+          return post;
+        } else if (
+          post.productname.toLowerCase().includes(query.toLowerCase())
+        ) {
+          return post;
+        }
+      })
+      .map((post, index) => (
+        <div className="box" key={index}>
+          <p>{post.title}</p>
+          <p>{post.author}</p>
+        </div>
+      ));
+  };
+
   return (
     <>
       <header>
-        <nav>
+        <nav role="navigation">
           <div id="search-bar">
-            <div className="search-container">
+            <div
+              className="search-container"
+              data-collapse-toggle="navbar-search"
+              aria-controls="navbar-search"
+            >
               <Link to="/" className="logo">
                 <img src={LOGO} className="logo cap" alt="LOGO" />
               </Link>
               <form className="searchbar">
                 <input
-                  className="searchbar bar"
+                  className="form-control searchbar bar"
                   type="text"
                   placeholder="CAP search"
-                  value=""
                 />
+                <button
+                  type="submit"
+                  class="btn btn-default"
+                  style={{
+                    marginLeft: "10px",
+                    fontSize: "13px",
+                    border: "1px solid",
+                    borderColor: "black",
+                    borderRadius: "100px",
+                  }}
+                  onChange={(event) => setQuery(event.target.value)}
+                >
+                  Look'up!
+                </button>
               </form>
             </div>
           </div>
+
           <ul>
             <li className="nav-item gallery">
               <Link to="/" className="navbar-link" id="nav-link">

@@ -5,6 +5,7 @@ import Logo from "../../assets/login-form/cap-logo.svg";
 import backGr from "../../assets/img/2.jpg";
 import { auth, logInWithEmailAndPassword } from "../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import swal from "sweetalert";
 // import styled from "styled-components";
 
 //
@@ -27,8 +28,13 @@ const Login = () => {
     if (loading) {
       return;
     }
-    if (user) navigate("/");
-    if (error) alert(error);
+    if (user) {
+      // swal("success", "Success login", "success").then((okay) => {
+      //   if (okay) {
+      navigate("/");
+      // }
+    }
+    if (error) swal("error", error, "error");
   }, [loading, user, error, navigate]);
 
   return (

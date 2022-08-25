@@ -36,3 +36,36 @@
   display:block;
   overflow:hidden;
 }
+
+
+// const getDetail = () => {
+  //   getDetailProduct(productId);
+  // };
+  // console.log(dataDetail);
+  // null == false
+  // 0 == false
+  // undefined == false
+
+  // array([]) = ini masih dianggap true
+  // .length itu untuk ngitung jumlah array
+
+  // useEffect(() => {
+  //   getDetail();
+  // }, [productId]);
+
+  // useEffect(() => {
+  //   if (dataDetail.length > 1 || changeProduct) {
+  //     getDetailProduct(productId);
+  //     getProduct(Math.floor(Math.random() * 2 + 1), 4);
+  //     setChangeProduct(false);
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [changeProduct]);
+
+  // const handleClick = useCallback(
+  //   (id) => {
+  //     setChangeProduct(true);
+  //     navigate(`/product/${id}`);
+  //   },
+  //   [navigate]
+  // );

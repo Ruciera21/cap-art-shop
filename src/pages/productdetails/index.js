@@ -17,11 +17,14 @@ import {
 
 import { auth } from "../../config/firebase";
 import { useProducts, useDetailProducts } from "../../hooks/useProduct";
+import { useDispatch } from "react-redux";
+import swal from "sweetalert";
 
 const Index = () => {
   const { productId } = useParams();
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [changeProduct, setChangeProduct] = useState(false);
   const [isLoading, dataDetail, getDetailProduct] = useDetailProducts();
   const [isLoadingProduct, data, getProduct] = useProducts();
@@ -45,23 +48,33 @@ const Index = () => {
     getDetail();
   }, [productId]);
 
-  // useEffect(() => {
-  //   if (dataDetail.length > 1 || changeProduct) {
-  //     getDetailProduct(productId);
-  //     getProduct(Math.floor(Math.random() * 2 + 1), 4);
-  //     setChangeProduct(false);
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [changeProduct]);
-
-  // const handleClick = useCallback(
-  //   (id) => {
-  //     setChangeProduct(true);
-  //     navigate(`/product/${id}`);
-  //   },
-  //   [navigate]
-  // );
-
+  const handleAddToCart = () => {
+    if (!user) {
+      alert("Please login to add to cart");
+      navigate("/login");
+    } else {
+      const { id, productname, price, image } = dataDetail;
+      const { quantity } = detailOrder;
+      const data = { id, productname, price, image, quantity };
+      if (quantity === 0) {
+        swal({
+          icon: "error",
+          title: "Oops...",
+          text: "Please fill all field",
+        });
+      } else {
+        dispatch({
+          type: "ADD_TO_CART",
+          value: data,
+        });
+        swal({
+          icon: "success",
+          title: "Mantul",
+          text: "Added to cart",
+        });
+      }
+    }
+  };
   return isLoading && isLoadingProduct ? (
     <div style={{ height: "100vh", textAlign: "center" }}>
       Loading Product...
@@ -101,7 +114,9 @@ const Index = () => {
 
             <H1>${dataDetail?.price}</H1>
             <P>{dataDetail?.description}</P>
-            <A href={user ? "/cart" : "/login"}>Add to Cart</A>
+            <A onClick={handleAddToCart} className="btn">
+              Add to Cart
+            </A>
           </Col2>
         </ColDetailProduct>
       </StyledDetailProduct>

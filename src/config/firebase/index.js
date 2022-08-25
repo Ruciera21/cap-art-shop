@@ -11,6 +11,8 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+import swal from "sweetalert";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDcjG8VCaT9ML1sEredDoZZs87BBzFr4b4",
@@ -31,7 +33,7 @@ const logInWithEmailAndPassword = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
     console.error(err);
-    alert(err.message);
+    swal("Error", err.message, "error");
   }
 };
 
@@ -47,7 +49,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     });
   } catch (err) {
     console.error(err);
-    alert(err.message);
+    swal("Error", err.message, "error");
   }
 };
 

@@ -18,9 +18,22 @@ import {
   A,
 } from "./cart-style";
 
-import { images } from "../../assets";
+import { useSelector, useDispatch } from "react-redux";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.productOrder);
+  const subTotalPrice = data
+    .reduce((acc, curr) => acc + curr.price * curr.quantity, 0)
+    .toFixed(2);
+  // const discount = (10 / 100 / subTotalPrice).toFixed(2);
+  // const tax = ((10 * 100) / subTotalPrice).toFixed(2);
+  // const totalPrice = (
+  //   subTotalPrice +
+  //   parseFloat(discount) +
+  //   parseFloat(tax)
+  // ).toFixed(2);
+
   return (
     <Container>
       <CartProduct>
@@ -43,66 +56,61 @@ const Cart = () => {
             <H4>Quantity</H4>
           </Col>
         </ColHeadCart>
+        {data.map((item, idx) => (
+          <div key={idx}>
+            <ColHeadCart>
+              <Col>
+                <StyledImg src={item.image} alt="" />
+              </Col>
 
-        <ColHeadCart>
-          <Col>
-            <StyledImg src={images["geki.jpg"]} alt="" />
-          </Col>
+              <Col>
+                <Pccp>{item.productname}</Pccp>
+              </Col>
 
-          <Col>
-            <Pccp>Geki Geki</Pccp>
-          </Col>
+              <Col>
+                <Pccp>${item.price}</Pccp>
+              </Col>
 
-          <Col>
-            <Pccp>$19.99</Pccp>
-          </Col>
+              <Col>
+                <Input
+                  type="number"
+                  min={1}
+                  defaultValue={item.quantity}
+                  onChange={(e) =>
+                    dispatch({
+                      type: "CHANGE_QUANTITY_ITEM",
+                      value: e.target.value,
+                      id: item.id,
+                    })
+                  }
+                />
+              </Col>
+            </ColHeadCart>
+          </div>
+        ))}
+        <PaymentInformation>
+          <H1>Payment Informations</H1>
 
-          <Col>
-            <Input type="number" defaultValue="1" min="1" />
-          </Col>
-        </ColHeadCart>
+          <DataPayment>
+            {/* <CardDpm>
+                  <Pdpm>Tax 10%</Pdpm>
+                  <H2>${tax}</H2>
+                </CardDpm>
 
-        <ColHeadCart>
-          <Col>
-            <StyledImg src={images["yoneya.jpeg"]} alt="" />
-          </Col>
+                <CardDpm>
+                  <Pdpm>Discount</Pdpm>
+                  <H2>${discount}</H2>
+                </CardDpm> */}
 
-          <Col>
-            <Pccp>Yoneyma Mai</Pccp>
-          </Col>
+            <CardDpm>
+              <Ptotal>Total</Ptotal>
+              <H2>${subTotalPrice}</H2>
+            </CardDpm>
 
-          <Col>
-            <Pccp>$19.99</Pccp>
-          </Col>
-
-          <Col>
-            <Input type="number" defaultValue="1" min="1" />
-          </Col>
-        </ColHeadCart>
+            <A href="/">Checkout</A>
+          </DataPayment>
+        </PaymentInformation>
       </CartProduct>
-
-      <PaymentInformation>
-        <H1>Payment Informations</H1>
-
-        <DataPayment>
-          <CardDpm>
-            <Pdpm>$80</Pdpm>
-            <H2>Tax 10%</H2>
-          </CardDpm>
-
-          <CardDpm>
-            <Pdpm>$0</Pdpm>
-            <H2>Discount</H2>
-          </CardDpm>
-
-          <CardDpm>
-            <Ptotal>$880</Ptotal>
-            <H2>Total</H2>
-          </CardDpm>
-
-          <A href="/">Checkout</A>
-        </DataPayment>
-      </PaymentInformation>
     </Container>
   );
 };
