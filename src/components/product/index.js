@@ -1,71 +1,40 @@
-import React from "react";
-import CardProduct from "../card";
-import { images } from "../../assets";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import { useProducts } from "../../hooks/useProduct";
+
 import "./product.css";
 
 const Products = () => {
+  const [isLoading, data, getAllProduct] = useProducts();
 
+  useEffect(() => {
+    if (data.length < 1) {
+      getAllProduct(1, 12, "", "");
+    }
+  }, [data.length, getAllProduct]);
 
   return (
     <>
       <div className="products">
         <h1>Shop</h1>
         <div className="product-items">
-          <a href="/detailproduct">
-            <CardProduct
-              image={images["geki.jpg"]}
-              title="Geki-dan"
-              price="$19.99"
-            />
-          </a>
+          {data?.map((product) => (
+            <div className="card product-item" key={product.id}>
+              <Link to={`/product/${product.id}`}>
+                <img
+                  className="product-img"
+                  loading="lazy"
+                  // src={images[`product-${product.id}.jpg`]}
+                  src={product.image}
+                  alt={product.productname}
+                />
+              </Link>
+              <h4>{product.productname}</h4>
 
-          <CardProduct
-            image={images["pokazo.jpeg"]}
-            title="Mika Pikazo"
-            price="$19.99"
-          />
-
-          <CardProduct
-            image={images["makima.jfif"]}
-            title="Makima"
-            price="$19.99"
-          />
-
-          <CardProduct
-            image={images["gbf.png"]}
-            title="Granblue"
-            price="$19.99"
-          />
-
-          <CardProduct
-            image={images["yoneya.jpeg"]}
-            title="Yoneyama Mai"
-            price="$19.99"
-          />
-
-          <CardProduct
-            image={images["soo3.jpg"]}
-            title="Scenery-I"
-            price="$19.99"
-          />
-
-          <CardProduct
-            image={images["soo4.jpeg"]}
-            title="Scenery-II"
-            price="$19.99"
-          />
-
-          <CardProduct
-            image={images["soo2.jpg"]}
-            title="Scenery-III"
-            price="$19.99"
-          />
-
-          <CardProduct
-            image={images["soo1.png"]}
-            title="Scenery-IV"
-            price="$19.99"
-          />
+              <p>{product.price}</p>
+            </div>
+          ))}
         </div>
       </div>
     </>
