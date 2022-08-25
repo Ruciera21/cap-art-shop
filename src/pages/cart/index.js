@@ -107,7 +107,7 @@ const Cart = () => {
               <H2>${subTotalPrice}</H2>
             </CardDpm>
 
-            <A href="/">Checkout</A>
+            <A href="/">Checkout here</A>
           </DataPayment>
         </PaymentInformation>
       </CartProduct>
