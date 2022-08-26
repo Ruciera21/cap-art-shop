@@ -72,7 +72,7 @@ export const StyledImg = styled.img`
 
 export const Input = styled.input`
   padding-left: 10px;
-  margin: 10px auto;
+  margin: -7px 0px 0px 0px;
   width: 25%;
   min-height: 36px;
   border: 1px solid #29a867;
